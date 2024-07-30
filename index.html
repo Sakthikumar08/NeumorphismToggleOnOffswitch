@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neumorphism Toggle On/Off</title>
+    <style>
+        body{
+            background-color:rgb(37, 0, 46) ;
+           display: flex;
+            justify-content: center;
+            height: 550px;
+            align-items: center;
+        }
+        .circle{
+            position: relative;
+  display: inline-block;
+  width: 120px;
+  height:120px;
+  border: 2px solid #dcdcdc;
+  
+  background: #f0ecec;
+  box-shadow: 7px 7px 23px #bebebe, -7px -7px 23px #ffffff;
+  overflow: hidden;
+  border-radius: 50%;
+        }
+        .circle input{
+            opacity:0;
+            width:0;
+            height:0;
+        }
+
+        .trans{
+            position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #f0ecec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family:'Times New Roman', Times, serif sans-serif;
+}
+
+
+        
+        input:checked + .trans:before {
+  background: white;
+  box-shadow: none;
+}
+
+input:focus + .trans {
+  box-shadow: 0 0 20px #2196f3;
+}
+
+.slider1 {
+  color: white;
+  font-weight: 600;
+  background-color: #36d53b;
+}
+
+.slider2 div {
+  transition: 0.5s;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+}
+
+input:checked ~ .slider2 div:first-child {
+  transform: translateY(-100%);
+  transition-delay: 1s;
+}
+
+input:checked ~ .slider2 div:last-child {
+  transform: translateY(100%);
+  transition-delay: 1s;
+}
+
+input:checked ~ .slider3 {
+  transform: translateX(100%);
+  transition-delay: 0.5s;
+}
+
+input:checked ~ .slider4 {
+  transform: translateX(-100%);
+  transition-delay: 0s;
+}
+
+.slider2 div:first-child {
+  transform: translateY(0);
+  top: 0;
+  background-color: #f7f7f7;
+  transition-delay: 0s;
+}
+
+.slider2 div:last-child {
+  transform: translateY(0);
+  bottom: 0;
+  background-color: #f7f7f7;
+  border-top: 1px solid #b6aeae;
+  transition-delay: 0s;
+}
+
+.slider3 {
+  background-color: #f7f7f7;
+  transition-delay: 0.5s;
+  transform: translateX(0);
+  border-left: 1px solid #b6aeae;
+}
+
+.slider4 {
+  background-color: #db1a1a;
+  transition-delay: 1s;
+  transform: translatex(0);
+  border-right: 1px solid #b6aeae;
+  
+}
+        
+
+    </style>
+    </head>
+    <body>
+        <label class="circle">
+            <input type="checkbox">
+            <div class="trans slider1">ON</div>
+            <div class="trans slider2">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="trans slider3"></div>
+            <div class="trans slider4">OFF</div>
+
+        </label>
+    </body>
+    </html>
